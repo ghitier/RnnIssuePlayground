@@ -57,10 +57,14 @@ const layout = [
   },
 ];
 
-const setOneComponentRoot = () => Navigation.setRoot(wrapChildrenWithRootAndStack(layout[0]));
-const setTwoComponentRoot = () => Navigation.setRoot(wrapChildrenWithRootAndStack(...layout));
-const setOneComponentStackRoot = () => Navigation.setStackRoot(IDS.MAIN_STACK, layout[0]);
-const setTwoComponentStackRoot = () => Navigation.setStackRoot(IDS.MAIN_STACK, layout);
+const setOneComponentRoot = () =>
+  Navigation.setRoot(wrapChildrenWithRootAndStack(layout[0]));
+const setTwoComponentRoot = () =>
+  Navigation.setRoot(wrapChildrenWithRootAndStack(...layout));
+const setOneComponentStackRoot = () =>
+  Navigation.setStackRoot(IDS.MAIN_STACK, layout[0]);
+const setTwoComponentStackRoot = () =>
+  Navigation.setStackRoot(IDS.MAIN_STACK, layout);
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -75,16 +79,28 @@ const App: () => Node = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={styles.content}>
         <View style={styles.buttonContainer}>
-          <Button title="setRoot (1 screen stack)" onPress={setOneComponentRoot} />
+          <Button
+            title="setRoot (1 screen stack)"
+            onPress={setOneComponentRoot}
+          />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title="setRoot (2 screens stack)" onPress={setTwoComponentRoot} />
+          <Button
+            title="setRoot (2 screens stack)"
+            onPress={setTwoComponentRoot}
+          />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title="setStackRoot (1 screen)" onPress={setOneComponentStackRoot} />
+          <Button
+            title="setStackRoot (1 screen)"
+            onPress={setOneComponentStackRoot}
+          />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title="setStackRoot (2 screens)" onPress={setTwoComponentStackRoot} />
+          <Button
+            title="setStackRoot (2 screens)"
+            onPress={setTwoComponentStackRoot}
+          />
         </View>
       </View>
     </SafeAreaView>
@@ -98,7 +114,7 @@ App.options = () => ({
     },
     leftButtons: getLeftSideMenuButtons(),
   },
-})
+});
 
 const styles = StyleSheet.create({
   content: {
@@ -108,7 +124,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 12,
-  }
+  },
 });
 
 export default App;

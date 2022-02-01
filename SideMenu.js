@@ -10,14 +10,14 @@ import type {Node} from 'react';
 interface SideMenuProps {}
 
 const SideMenu = (props: SideMenuProps): Node => {
-    return <View style={styles.container} />
+  return <View style={styles.container} />;
 };
 
 export default SideMenu;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'slateblue',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: 'slateblue',
+  },
 });
