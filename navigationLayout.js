@@ -10,6 +10,7 @@ export const IDS = {
   SIDE_MENU: 'SideMenu',
   SIDE_MENU_BUTTON: 'SideMenuButton',
   MAIN_STACK: 'MainStack',
+  OVERLAY: 'Overlay',
   APP: 'App',
   SCREEN: 'Screen',
 };
