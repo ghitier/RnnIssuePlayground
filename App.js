@@ -1,7 +1,4 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
  * @format
  * @flow strict-local
  */
@@ -18,7 +15,11 @@ import {
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
-import {IDS, wrapChildrenWithRootAndStack} from "./navigationLayout";
+import {
+  IDS,
+  getLeftSideMenuButtons,
+  wrapChildrenWithRootAndStack,
+} from './navigationLayout';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
@@ -29,6 +30,14 @@ const layout = [
       passProps: {
         backgroundColor: 'crimson',
       },
+      options: {
+        topBar: {
+          title: {
+            text: 'Bottom Stacked',
+          },
+          leftButtons: getLeftSideMenuButtons(),
+        },
+      },
     },
   },
   {
@@ -36,6 +45,13 @@ const layout = [
       name: 'Screen',
       passProps: {
         backgroundColor: 'salmon',
+      },
+      options: {
+        topBar: {
+          title: {
+            text: 'Top Stacked',
+          },
+        },
       },
     },
   },
@@ -74,6 +90,15 @@ const App: () => Node = () => {
     </SafeAreaView>
   );
 };
+
+App.options = () => ({
+  topBar: {
+    title: {
+      text: 'App',
+    },
+    leftButtons: getLeftSideMenuButtons(),
+  },
+})
 
 const styles = StyleSheet.create({
   content: {
